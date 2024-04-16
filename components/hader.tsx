@@ -1,22 +1,19 @@
-import { Search, UserRound } from "lucide-react";
+import { UserRound } from "lucide-react";
 import Link from "next/link";
 import { PropsWithChildren } from "react";
+import SearchBox from "./search-box";
 
 const Header = () => {
   return (
     <header className="flex text-slate-700 px-6 sm:px-10 md:px-[74px] h-20 shadow items-center justify-between">
-      <Link className="font-bold text-[#f15700] text-3xl" href="/">
+      <Link
+        className="font-bold text-[#f15700] md:hover:scale-105 transition-all will-change-transform text-3xl"
+        href="/"
+      >
         Doodles
       </Link>
       <nav className="flex items-center gap-6 sm:gap-10 md:gap-20">
-        <button className="flex group items-center gap-2">
-          <Search
-            size={20}
-            className="transition-all group-focus:stroke-orange group-hover:stroke-orange"
-          />
-
-          <NavItemLabel>Search</NavItemLabel>
-        </button>
+        <SearchBox />
 
         <Link href="/" className="flex group items-center gap-2">
           <UserRound
@@ -48,7 +45,7 @@ const Header = () => {
   );
 };
 
-const NavItemLabel = ({ children }: PropsWithChildren) => (
+export const NavItemLabel = ({ children }: PropsWithChildren) => (
   <span className="font-medium transition-all hidden sm:inline-block group-focus:text-orange group-hover:text-orange ">
     {children}
   </span>
