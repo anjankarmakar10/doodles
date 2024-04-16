@@ -12,7 +12,7 @@ const Header = () => {
         <button className="flex group items-center gap-2">
           <Search
             size={20}
-            className="transition-all group-focus:stroke-[#fc8019] group-hover:stroke-[#fc8019]"
+            className="transition-all group-focus:stroke-orange group-hover:stroke-orange"
           />
 
           <NavItemLabel>Search</NavItemLabel>
@@ -21,7 +21,7 @@ const Header = () => {
         <Link href="/" className="flex group items-center gap-2">
           <UserRound
             size={20}
-            className="transition-all group-focus:stroke-[#fc8019] group-hover:stroke-[#fc8019]"
+            className="transition-all group-focus:stroke-orange group-hover:stroke-orange"
           />
 
           <NavItemLabel>Sign In</NavItemLabel>
@@ -30,7 +30,7 @@ const Header = () => {
         <Link href="/" className="flex group items-center gap-2">
           <span className="relative block isolate">
             <svg
-              className="group-focus:text-[#fc8019] group-hover:text-[#fc8019] fill-[#60b246] group-focus:fill-[#fc8019] group-hover:fill-[#fc8019] transition-all"
+              className="group-focus:text-orange group-hover:text-orange fill-green group-focus:fill-orange group-hover:fill-orange transition-all"
               viewBox="-1 0 37 32"
               height="24"
               width="24"
@@ -49,7 +49,7 @@ const Header = () => {
 };
 
 const NavItemLabel = ({ children }: PropsWithChildren) => (
-  <span className="font-medium transition-all hidden sm:inline-block group-focus:text-[#fc8019] group-hover:text-[#fc8019] ">
+  <span className="font-medium transition-all hidden sm:inline-block group-focus:text-orange group-hover:text-orange ">
     {children}
   </span>
 );
