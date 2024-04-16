@@ -4,11 +4,11 @@ import { PropsWithChildren } from "react";
 
 const Header = () => {
   return (
-    <header className="flex text-slate-700 px-10 md:px-[74px] h-20 shadow items-center justify-between">
+    <header className="flex text-slate-700 px-6 sm:px-10 md:px-[74px] h-20 shadow items-center justify-between">
       <Link className="font-bold text-[#f15700] text-3xl" href="/">
         Doodles
       </Link>
-      <nav className="flex items-center gap-10 md:gap-20">
+      <nav className="flex items-center gap-6 sm:gap-10 md:gap-20">
         <button className="flex group items-center gap-2">
           <Search
             size={20}
@@ -49,7 +49,7 @@ const Header = () => {
 };
 
 const NavItemLabel = ({ children }: PropsWithChildren) => (
-  <span className="font-medium transition-all group-focus:text-[#fc8019] group-hover:text-[#fc8019] ">
+  <span className="font-medium transition-all hidden sm:inline-block group-focus:text-[#fc8019] group-hover:text-[#fc8019] ">
     {children}
   </span>
 );
