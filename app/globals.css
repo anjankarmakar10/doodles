@@ -74,3 +74,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+.bg-hero {
+  background: linear-gradient(
+    0deg,
+    rgb(201, 188, 244) 0%,
+    rgb(255, 255, 255) 95.83%
+  );
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  outline: none;
+  overflow: hidden;
+}
