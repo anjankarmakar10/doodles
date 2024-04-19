@@ -5,7 +5,7 @@ import SearchBox from "./search-box";
 
 const Header = () => {
   return (
-    <header className="flex text-slate-700 px-6 sm:px-10 md:px-[74px] h-20 shadow items-center justify-between">
+    <header className="flex top-0 w-full sticky text-slate-700 px-6 sm:px-10 md:px-[74px] h-20 bg-white z-50 items-center justify-between">
       <Link
         className="font-bold text-[#f15700] md:hover:scale-105 transition-all will-change-transform text-3xl"
         href="/"

@@ -1,3 +1,6 @@
+export const BASE_URL = "https://api.spoonacular.com";
+export const API_KEY = process.env.API_KEY;
+
 export const categories = [
   {
     id: "83644",
