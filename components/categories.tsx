@@ -37,6 +37,7 @@ const Categories = () => {
                     pathname: `/search/${category.name}`,
                     query: { from: "category" },
                   }}
+                  className="flex justify-center"
                 >
                   <Image
                     src={category.image}
