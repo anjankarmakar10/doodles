@@ -1,3 +1,4 @@
+"use client";
 import {
   Carousel,
   CarouselContent,
@@ -6,7 +7,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import RecipeCard from "./RecipeCard";
+import usePopularRecipes from "@/hooks/usePopularRecipes";
 const PopularRecipes = () => {
+  const { recipes, isError, isLoading } = usePopularRecipes();
+
   return (
     <section className="max-w-[1036px] mx-auto px-4  pb-10">
       <Carousel
