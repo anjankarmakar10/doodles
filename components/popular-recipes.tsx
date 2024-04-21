@@ -8,7 +8,7 @@ import {
 import RecipeCard from "./RecipeCard";
 const PopularRecipes = () => {
   return (
-    <section className="max-w-[1036px] mx-auto px-4 pt-8 pb-10">
+    <section className="max-w-[1036px] mx-auto px-4  pb-10">
       <Carousel
         opts={{
           align: "center",
