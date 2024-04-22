@@ -7,8 +7,6 @@ interface Props {
 }
 
 const RecipeCard = ({ recipe }: Props) => {
-  console.log(recipe);
-
   return (
     <Link
       href="/"

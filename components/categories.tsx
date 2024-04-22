@@ -19,7 +19,7 @@ const Categories = () => {
         }}
       >
         <header className="flex items-center justify-between ">
-          <h2 className="font-bold text-2xl">Whats on your mind?</h2>
+          <h2 className="font-bold text-xl sm:text-2xl">Whats on your mind?</h2>
           <div className="flex items-center relative gap-2">
             <CarouselPrevious className="absolute -translate-x-8 right-0" />
             <CarouselNext className="absolute right-0" />
@@ -43,7 +43,7 @@ const Categories = () => {
                     src={category.image}
                     height={180}
                     width={144}
-                    className="h-[180px] w-[144] object-cover"
+                    className="h-[160px] w-[140px] md:h-[180px] md:w-[144] object-cover"
                     alt={category.label}
                   />
                 </Link>

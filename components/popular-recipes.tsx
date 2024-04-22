@@ -21,12 +21,14 @@ const PopularRecipes = () => {
     <section className="max-w-[1036px] mx-auto px-4  pb-10">
       <Carousel
         opts={{
-          align: "start",
+          align: "center",
           dragFree: true,
         }}
       >
         <header className="flex items-center justify-between ">
-          <h2 className="font-bold text-2xl">Top Recipe in Bangalore</h2>
+          <h2 className="font-bold text-xl sm:text-2xl">
+            Top Recipe in Bangalore
+          </h2>
           <div className="flex items-center relative gap-2">
             <CarouselPrevious className="absolute -translate-x-8 right-0" />
             <CarouselNext className="absolute right-0" />

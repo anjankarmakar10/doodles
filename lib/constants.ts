@@ -143,3 +143,16 @@ export const categories = [
     label: "restaurant curated for Pastry",
   },
 ];
+
+export const cuisines = [
+  { id: 1, label: "Italian", value: "italian" },
+  { id: 2, label: "Chinese", value: "chinese" },
+  { id: 3, label: "Indian", value: "indian" },
+  { id: 4, label: "Mexican", value: "mexican" },
+  { id: 5, label: "Japanese", value: "japanese" },
+  { id: 6, label: "Korean", value: "korean" },
+  { id: 7, label: "French", value: "french" },
+  { id: 8, label: "Thai", value: "thai" },
+  { id: 9, label: "Spanish", value: "spanish" },
+  { id: 10, label: "American", value: "american" },
+];

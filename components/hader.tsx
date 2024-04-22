@@ -1,4 +1,4 @@
-import { UserRound } from "lucide-react";
+import { UserRound, Soup } from "lucide-react";
 import Link from "next/link";
 import { PropsWithChildren } from "react";
 import SearchBox from "./search-box";
@@ -12,7 +12,7 @@ const Header = () => {
       >
         Doodles
       </Link>
-      <nav className="flex items-center gap-6 sm:gap-10 md:gap-20">
+      <nav className="flex items-center gap-6 sm:gap-5 md:gap-10 lg:gap-16">
         <SearchBox />
 
         <Link href="/" className="flex group items-center gap-2">
@@ -22,6 +22,18 @@ const Header = () => {
           />
 
           <NavItemLabel>Sign In</NavItemLabel>
+        </Link>
+
+        <Link
+          href="/cuisines?country=indian"
+          className="flex group items-center gap-2"
+        >
+          <Soup
+            size={20}
+            className="transition-all group-focus:stroke-orange group-hover:stroke-orange"
+          />
+
+          <NavItemLabel>Cuisines</NavItemLabel>
         </Link>
 
         <Link href="/" className="flex group items-center gap-2">
