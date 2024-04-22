@@ -8,14 +8,20 @@ import {
 } from "@/components/ui/carousel";
 import RecipeCard from "./RecipeCard";
 import usePopularRecipes from "@/hooks/usePopularRecipes";
+
 const PopularRecipes = () => {
-  const { recipes, isError, isLoading } = usePopularRecipes();
+  const { recipes, isError, isLoading, error } = usePopularRecipes();
+
+  if (isError) {
+    console.log(error);
+    return null;
+  }
 
   return (
     <section className="max-w-[1036px] mx-auto px-4  pb-10">
       <Carousel
         opts={{
-          align: "center",
+          align: "start",
           dragFree: true,
         }}
       >
@@ -28,24 +34,31 @@ const PopularRecipes = () => {
         </header>
         <div className="mt-5">
           <CarouselContent className="px-4 gap-8">
-            <CarouselItem className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3 ">
-              <RecipeCard />
-            </CarouselItem>
-            <CarouselItem className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3 ">
-              <RecipeCard />
-            </CarouselItem>
-            <CarouselItem className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3 ">
-              <RecipeCard />
-            </CarouselItem>
-            <CarouselItem className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3 ">
-              <RecipeCard />
-            </CarouselItem>
-            <CarouselItem className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3 ">
-              <RecipeCard />
-            </CarouselItem>
-            <CarouselItem className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3 ">
-              <RecipeCard />
-            </CarouselItem>
+            {isLoading ? (
+              <>
+                {Array(3)
+                  .fill("")
+                  .map((_, index) => (
+                    <CarouselItem
+                      key={index}
+                      className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3 "
+                    >
+                      <div>loading</div>
+                    </CarouselItem>
+                  ))}
+              </>
+            ) : (
+              <>
+                {recipes?.map((recipe) => (
+                  <CarouselItem
+                    key={recipe.id}
+                    className="pl-1 basis-full sm:basis-1/2 lg:basis-1/3 "
+                  >
+                    <RecipeCard recipe={recipe} />
+                  </CarouselItem>
+                ))}
+              </>
+            )}
           </CarouselContent>
         </div>
       </Carousel>
