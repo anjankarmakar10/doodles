@@ -27,7 +27,7 @@ const CuisinesHeader = () => {
     );
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center gap-4 flex-col sm:flex-row justify-between">
       <div>
         <h2 className="font-bold text-xl sm:text-2xl capitalize">
           {country} Cuisines

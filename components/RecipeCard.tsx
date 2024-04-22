@@ -16,16 +16,16 @@ const RecipeCard = ({ recipe }: Props) => {
         <Image
           src={recipe?.image}
           loading="lazy"
-          className="w-full group-hover:brightness-105 transition-all object-cover "
+          className="w-full h-[208px] group-hover:brightness-105 transition-all object-cover "
           width={312}
           height={208}
           alt=""
         />
         <div
-          style={{
-            background:
-              "linear-gradient(rgba(27, 30, 36, 0) 0%, rgba(27, 30, 36,.5) 84.21%)",
-          }}
+          // style={{
+          //   background:
+          //     "linear-gradient(rgba(27, 30, 36, 0) 0%, rgba(27, 30, 36,.5) 84.21%)",
+          // }}
           className="bg-gradient-to-b  object-cover left-0 right-0 bottom-0 z-10 h-20 absolute "
         ></div>
       </div>
