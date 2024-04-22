@@ -7,6 +7,15 @@ import { Skeleton } from "./ui/skeleton";
 const DiscoverRecipes = () => {
   const { data, isLoading, isError, error } = useRandomRecipes();
 
+  if (!data?.recipes) {
+    return (
+      <div className="max-w-[1036px] mx-auto px-4 text-lg py-8  font-bold text-slate-800">
+        Your daily points limit of 150 has been reached. Please upgrade your
+        plan to continue using the API.
+      </div>
+    );
+  }
+
   if (isError) {
     console.log(error);
     return;
