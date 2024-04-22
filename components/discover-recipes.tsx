@@ -7,7 +7,10 @@ import { Skeleton } from "./ui/skeleton";
 const DiscoverRecipes = () => {
   const { data, isLoading, isError, error } = useRandomRecipes();
 
-  console.log(data);
+  if (isError) {
+    console.log(error);
+    return;
+  }
 
   return (
     <section className="max-w-[1036px] mx-auto px-4  pb-10">
