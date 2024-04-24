@@ -6,17 +6,17 @@ interface QueryResponse {
   results: SearchRecipe[];
 }
 
-const useSearch = (query: string) => {
+const useCuisines = (name: string) => {
   const getData = () => {
     return fetch(
-      `${BASE_URL}/recipes/complexSearch?apiKey=${API_KEY}&query=${query}&number=15`
+      `${BASE_URL}/recipes/complexSearch?apiKey=${API_KEY}&cuisine=${name}&number=15`
     ).then((res) => res.json());
   };
 
   return useQuery<QueryResponse>({
-    queryKey: ["cuisines", query],
+    queryKey: ["cuisines", name],
     queryFn: getData,
     staleTime: 1 * 60000,
   });
 };
-export default useSearch;
+export default useCuisines;

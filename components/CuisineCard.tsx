@@ -15,7 +15,7 @@ const CuisineCard = ({ recipe }: Props) => {
       <Image
         src={recipe?.image}
         loading="lazy"
-        className="w-full will-change-transform h-[208px] md:group-hover:scale-105 md:blur-[1px] group-hover:brightness-110 md:group-hover:blur-0 transition-all object-cover duration-300 "
+        className="w-full will-change-transform h-[208px] md:group-hover:scale-105  group-hover:brightness-110  transition-all object-cover duration-300 "
         width={312}
         height={208}
         alt=""

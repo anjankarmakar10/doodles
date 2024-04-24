@@ -34,8 +34,8 @@ const Categories = () => {
               >
                 <Link
                   href={{
-                    pathname: `/search/${category.name}`,
-                    query: { from: "category" },
+                    pathname: `/search`,
+                    query: { query: category.name },
                   }}
                   className="flex justify-center"
                 >

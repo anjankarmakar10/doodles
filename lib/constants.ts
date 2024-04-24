@@ -23,13 +23,7 @@ export const categories = [
       "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Burger.png",
     label: "restaurants curated for burger",
   },
-  {
-    id: "80462",
-    name: "Momos",
-    image:
-      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029852/PC_Creative%20refresh/3D_bau/banners_new/Momos.png",
-    label: "restaurant curated for momos",
-  },
+
   {
     id: "83670",
     name: "Roll",
@@ -44,13 +38,7 @@ export const categories = [
       "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029855/PC_Creative%20refresh/3D_bau/banners_new/Noodles.png",
     label: "restaurant curated for noodles",
   },
-  {
-    id: "80397",
-    name: "Samosa",
-    image:
-      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029860/PC_Creative%20refresh/3D_bau/banners_new/Samosas.png",
-    label: "restaurants curated for samosa",
-  },
+
   {
     id: "83647",
     name: "Chinese",
@@ -72,16 +60,10 @@ export const categories = [
       "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029845/PC_Creative%20refresh/3D_bau/banners_new/Cakes.png",
     label: "restaurant curated for cakes",
   },
-  {
-    id: "80426",
-    name: "Dosa",
-    image:
-      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029850/PC_Creative%20refresh/3D_bau/banners_new/Dosa.png",
-    label: "restaurants curated for dosa",
-  },
+
   {
     id: "83646",
-    name: "South Indian",
+    name: "Indian",
     image:
       "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1675667626/PC_Creative%20refresh/South_Indian_4.png",
     label: "restaurants curated for south indian",
@@ -93,13 +75,7 @@ export const categories = [
       "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029854/PC_Creative%20refresh/3D_bau/banners_new/Pasta.png",
     label: "restaurant curated for pasta",
   },
-  {
-    id: "80403",
-    name: "Shawarma",
-    image:
-      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029859/PC_Creative%20refresh/3D_bau/banners_new/Shawarma.png",
-    label: "restaurant curated for shawarma",
-  },
+
   {
     id: "83674",
     name: "Shakes",
@@ -114,13 +90,7 @@ export const categories = [
       "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029858/PC_Creative%20refresh/3D_bau/banners_new/Pure_Veg.png",
     label: "restaurants curated for veg",
   },
-  {
-    id: "80364",
-    name: "Pav Bhaji",
-    image:
-      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029854/PC_Creative%20refresh/3D_bau/banners_new/Pav_Bhaji.png",
-    label: "restaurant curated for pav bhaji",
-  },
+
   {
     id: "80395",
     name: "Salad",
@@ -128,13 +98,7 @@ export const categories = [
       "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029859/PC_Creative%20refresh/3D_bau/banners_new/Salad.png",
     label: "restaurant curated for salad",
   },
-  {
-    id: "80450",
-    name: "Kachori",
-    image:
-      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/v1674029847/PC_Creative%20refresh/3D_bau/banners_new/Kachori.png",
-    label: "restaurant curated for kachori",
-  },
+
   {
     id: "80358",
     name: "Pastry",
