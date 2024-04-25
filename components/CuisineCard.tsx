@@ -9,7 +9,7 @@ interface Props {
 const CuisineCard = ({ recipe }: Props) => {
   return (
     <Link
-      href={"/"}
+      href={`/recipe/${recipe.id}`}
       className="rounded-2xl group h-52 overflow-hidden relative isolate"
     >
       <Image

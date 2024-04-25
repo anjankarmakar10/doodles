@@ -9,7 +9,7 @@ interface QueryResponse {
 const useCuisines = (name: string) => {
   const getData = () => {
     return fetch(
-      `${BASE_URL}/recipes/complexSearch?apiKey=${API_KEY}&cuisine=${name}&number=15`
+      `${BASE_URL}/recipes/complexSearch?apiKey=${API_KEY}&cuisine=${name}&number=20`
     ).then((res) => res.json());
   };
 

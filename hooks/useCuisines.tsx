@@ -9,7 +9,7 @@ interface QueryResponse {
 const useSearch = (query: string) => {
   const getData = () => {
     return fetch(
-      `${BASE_URL}/recipes/complexSearch?apiKey=${API_KEY}&query=${query}&number=15`
+      `${BASE_URL}/recipes/complexSearch?apiKey=${API_KEY}&query=${query}&number=20`
     ).then((res) => res.json());
   };
 

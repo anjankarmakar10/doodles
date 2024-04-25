@@ -9,7 +9,7 @@ interface Props {
 const RecipeCard = ({ recipe }: Props) => {
   return (
     <Link
-      href="/"
+      href={`/recipe/${recipe.id}`}
       className="group grid gap-3 origin-center will-change-transform hover:scale-95 transition-all"
     >
       <div className="rounded-2xl h-52 overflow-hidden relative isolate">
