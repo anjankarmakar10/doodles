@@ -161,3 +161,52 @@ export type RecipeEquipment = {
   localizedName: string;
   image: string;
 };
+
+export type IngredientDetails = {
+  id: number;
+  original: string;
+  originalName: string;
+  name: string;
+  amount: number;
+  unit: string;
+  unitShort: string;
+  unitLong: string;
+  possibleUnits: string[];
+  estimatedCost: {
+    value: number;
+    unit: string;
+  };
+  consistency: string;
+  shoppingListUnits: string[];
+  aisle: string;
+  image: string;
+
+  nutrition: {
+    nutrients: {
+      name: string;
+      amount: number;
+      unit: string;
+      percentOfDailyNeeds: number;
+    }[];
+    properties: {
+      name: string;
+      amount: number;
+      unit: string;
+    }[];
+    flavonoids: {
+      name: string;
+      amount: number;
+      unit: string;
+    }[];
+    caloricBreakdown: {
+      percentProtein: number;
+      percentFat: number;
+      percentCarbs: number;
+    };
+    weightPerServing: {
+      amount: number;
+      unit: string;
+    };
+  };
+  categoryPath: string[];
+};

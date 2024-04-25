@@ -1,13 +1,17 @@
+import { badgeVariants } from "@/components/ui/badge";
 import { API_KEY, BASE_URL } from "@/lib/constants";
 import { RecipeDetails } from "@/lib/types";
 import Image from "next/image";
+import Link from "next/link";
 import { cache } from "react";
 
-const getRecipeInformation = cache((id: string): Promise<RecipeDetails> => {
-  return fetch(
-    `${BASE_URL}/recipes/${id}/information?includeNutrition=true&apiKey=${API_KEY}`
-  ).then((res) => res.json());
-});
+const getRecipeInformation = cache(
+  async (id: string): Promise<RecipeDetails> => {
+    return fetch(
+      `${BASE_URL}/recipes/${id}/information?includeNutrition=true&apiKey=${API_KEY}`
+    ).then((res) => res.json());
+  }
+);
 
 interface Params {
   params: {
@@ -15,27 +19,40 @@ interface Params {
   };
 }
 
-const RecipeDetails = async ({ params }: Params) => {
+const RecipeInformation = async ({ params }: Params) => {
   const recipe = await getRecipeInformation(params.id);
 
   return (
     <section className="max-w-[1036px] mx-auto px-4 py-8">
       <div className="">
-        <h1 className="text-2xl font-bold mb-4 ">{recipe.title}</h1>
+        <div className="mb-4">
+          <h1 className="text-2xl font-bold mb-4 ">{recipe.title}</h1>
+          <div className="flex gap-2 items-center">
+            {recipe.cuisines.map((item, i) => (
+              <Link
+                className={badgeVariants()}
+                href={`/cuisines?country=${item}`}
+                key={i}
+              >
+                {item}
+              </Link>
+            ))}
+          </div>
+        </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4">
           <div className="flex-1">
             <Image
               width={600}
               height={600}
-              className="w-full"
+              className="w-full rounded"
               src={recipe.image}
               alt={recipe.title}
             />
           </div>
           <div className="flex-1">
             <div
-              className="prose mx-auto lg:prose-xl"
+              className="prose mx-auto lg:prose-xl "
               dangerouslySetInnerHTML={{ __html: recipe.summary }}
             ></div>
             <div className="flex py-2 justify-evenly flex-wrap">
@@ -81,7 +98,7 @@ const RecipeDetails = async ({ params }: Params) => {
           </div>
         </div>
 
-        <h2 className="text-xl font-semibold mb-2 mt-4">Ingredients</h2>
+        <h2 className="text-2xl font-bold mb-2 mt-4">Ingredients</h2>
         <ul className="mb-4 flex flex-wrap items-center justify-center ">
           {recipe.extendedIngredients?.map((ingredient, index) => (
             <div
@@ -126,4 +143,4 @@ const RecipeDetails = async ({ params }: Params) => {
     </section>
   );
 };
-export default RecipeDetails;
+export default RecipeInformation;
