@@ -24,15 +24,20 @@ const SearchBox = () => {
   const [open, setOpen] = useState(false);
   const dialogClose = () => setOpen(!open);
 
+  const resetActiveIndex = () => setActiveIndex(-1);
+
   const handleKeyUp = (event: any) => {
     if (data.state === "success") {
       const keyCode = event.keyCode;
-      if (searchQuery === "") return;
+      if (searchQuery === "") {
+        resetActiveIndex();
+        return;
+      }
 
       if (keyCode === 13) {
         if (activeIndex !== -1) {
           router.push(`/search?query=${data.data[activeIndex].title}`);
-          setActiveIndex(-1);
+          resetActiveIndex();
         } else {
           router.push(`/search?query=${searchQuery}`);
         }
@@ -84,7 +89,10 @@ const SearchBox = () => {
                 <Input
                   onKeyUp={handleKeyUp}
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    resetActiveIndex();
+                  }}
                   className="font-normal focus-visible:ring-2 focus-visible:ring-orange"
                   type="search"
                   placeholder="Search recipe..."
