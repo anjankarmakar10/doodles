@@ -210,3 +210,8 @@ export type IngredientDetails = {
   };
   categoryPath: string[];
 };
+
+export type SearchSuggestion = {
+  id: number;
+  title: string;
+};

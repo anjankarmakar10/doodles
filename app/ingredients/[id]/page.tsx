@@ -42,7 +42,8 @@ const IngredientInformation = async ({ params }: Params) => {
                   Amount: {ingredient.amount} {ingredient.unit}
                 </p>
                 <p className="text-gray-700">
-                  Estimated Cost: ${ingredient.estimatedCost.value / 100}
+                  Estimated Cost: $
+                  {(ingredient.estimatedCost.value / 100).toFixed(2)}
                 </p>
                 <p className="text-gray-700">
                   Consistency: {ingredient.consistency}
@@ -61,9 +62,12 @@ const IngredientInformation = async ({ params }: Params) => {
                   </li>
                 ))}
               </ul>
-              <p className="text-gray-700">
-                Per Serving: {ingredient.nutrition.weightPerServing.amount}
-                {ingredient.nutrition.weightPerServing.unit}
+              <p className="text-gray-700 font-semibold">
+                Per Serving:{" "}
+                <span>
+                  {ingredient.nutrition.weightPerServing.amount}
+                  {ingredient.nutrition.weightPerServing.unit}
+                </span>
               </p>
             </article>
           </div>
@@ -78,10 +82,10 @@ const IngredientInformation = async ({ params }: Params) => {
 
         <section className="">
           <article>
-            <h3 className="text-lg font-bold mb-2">Nutrition:</h3>
-            <ul>
+            <h3 className="text-lg  font-bold mb-2">Nutrition:</h3>
+            <ul className="">
               {ingredient.nutrition.nutrients.map((nutrient) => (
-                <li key={nutrient.name} className="text-gray-700">
+                <li key={nutrient.name} className="text-gray-700 text-lg">
                   {nutrient.name}: {nutrient.amount} {nutrient.unit}
                 </li>
               ))}

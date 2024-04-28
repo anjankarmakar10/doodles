@@ -105,7 +105,7 @@ const RecipeInformation = async ({ params }: Params) => {
               key={index}
               className="rounded-xl overflow-hidden flex flex-col  bg-white cursor-pointer max-w-[200px]"
             >
-              <div className="p-2 ">
+              <Link href={`/ingredients/${ingredient.id}`} className="p-2 ">
                 <Image
                   width={500}
                   height={500}
@@ -113,7 +113,7 @@ const RecipeInformation = async ({ params }: Params) => {
                   className="rounded-xl object-cover w-full h-full"
                   alt=""
                 />
-              </div>
+              </Link>
 
               <div className=" pl-3 p-3 text-text1 flex flex-col justify-center">
                 <p className="text-sm mb-2 font-medium text-center">
@@ -127,8 +127,8 @@ const RecipeInformation = async ({ params }: Params) => {
         <h2 className="text-xl font-semibold mb-2">Instructions</h2>
         <ul className="bg-gray-100 mb-6">
           {recipe?.analyzedInstructions[0].steps.map((instruction, index) => (
-            <li key={index} className=" rounded flex p-4  h-full items-center">
-              <span className="text-indigo-500 font-bold w-6 h-6 flex-shrink-0 mr-4">
+            <li key={index} className=" rounded flex p-4  h-full items-start">
+              <span className="text-indigo-500 font-bold text-lg flex-shrink-0 mr-4">
                 {instruction.number}
               </span>
               <span className="font-medium">{instruction.step}</span>
