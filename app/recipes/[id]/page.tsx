@@ -45,6 +45,7 @@ const RecipeInformation = async ({ params }: Params) => {
             <Image
               width={600}
               height={600}
+              loading="lazy"
               className="w-full rounded"
               src={recipe.image}
               alt={recipe.title}
@@ -137,7 +138,7 @@ const RecipeInformation = async ({ params }: Params) => {
         </ul>
 
         <h5 className="text-2xl md:text-3xl pl-3 my-2 border-l-4  font-sans font-bold border-teal-400  text-gray-700">
-          Serve the recipe with your favorite frosting or enjoy it plain!
+          🥗 Serve the recipe with your favorite frosting or enjoy it plain!
         </h5>
       </div>
     </section>
