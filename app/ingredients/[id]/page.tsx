@@ -22,19 +22,20 @@ const IngredientInformation = async ({ params }: Params) => {
   const ingredient = await getIngredientInformation(params.id);
 
   return (
-    <div className="max-w-[1036px] mx-auto px-4 py-8">
+    <div className="max-w-2xl mx-auto px-4 py-8">
       <div className="flex flex-col">
-        <div className="flex flex-col md:flex-row gap-4 items-center">
+        <div className="flex flex-col justify-center md:flex-row gap-4 items-center mb-8">
           <Image
             width={500}
             height={500}
             src={`https://spoonacular.com/cdn/ingredients_250x250/${ingredient.image}`}
-            className="rounded-xl object-cover max-w-xs w-full h-full"
+            className="rounded-xl  object-cover max-w-xs w-full h-full"
             alt=""
           />
-          <div>
+
+          <div className="flex flex-col sm:flex-row gap-5 sm:gap-8 md:gap-4 md:flex-col ">
             <article>
-              <h2 className="text-2xl font-bold mb-4 capitalize">
+              <h2 className="text-2xl font-bold  capitalize">
                 {ingredient.name}
               </h2>
               <div className="mb-4">
@@ -72,7 +73,8 @@ const IngredientInformation = async ({ params }: Params) => {
             </article>
           </div>
         </div>
-        <div className="flex my-2 items-center gap-2">
+
+        <div className="flex   items-center gap-2">
           {ingredient.categoryPath.map((item, index) => (
             <Badge className="capitalize" key={index}>
               {item}
@@ -80,7 +82,7 @@ const IngredientInformation = async ({ params }: Params) => {
           ))}
         </div>
 
-        <section className="">
+        <section className="mt-8">
           <article>
             <h3 className="text-lg  font-bold mb-2">Nutrition:</h3>
             <ul className="">
