@@ -12,6 +12,10 @@ const getIngredientInformation = cache(
   }
 );
 
+const getIngredient = cache(async (id: string) => {
+  return await getIngredientInformation(id);
+});
+
 interface Params {
   params: {
     id: string;
@@ -19,7 +23,7 @@ interface Params {
 }
 
 const IngredientInformation = async ({ params }: Params) => {
-  const ingredient = await getIngredientInformation(params.id);
+  const ingredient = await getIngredient(params.id);
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-8">
