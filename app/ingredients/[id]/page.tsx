@@ -28,7 +28,7 @@ const IngredientInformation = async ({ params }: Params) => {
   return (
     <div className="max-w-2xl mx-auto px-4 py-8">
       <div className="flex flex-col">
-        <div className="flex flex-col justify-center md:flex-row gap-4 items-center mb-8">
+        <div className="flex flex-col justify-center md:flex-row gap-8 items-center mb-8">
           <Image
             width={500}
             height={500}
