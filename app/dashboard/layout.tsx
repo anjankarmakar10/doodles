@@ -5,14 +5,18 @@ import { cn } from "@/lib/utils";
 import { SidebarNav } from "./_components/sidebar-nav";
 
 export const metadata: Metadata = {
-  title: "Forms",
-  description: "Advanced form example using react-hook-form and Zod.",
+  title: "Dashboard",
+  description: "",
 };
 
 const sidebarNavItems = [
   {
     title: "Profile",
     href: "/dashboard/profile",
+  },
+  {
+    title: "Favorite",
+    href: "/dashboard/favorite",
   },
 ];
 
