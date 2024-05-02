@@ -1,12 +1,13 @@
+"use client";
 import { UserRound, Soup } from "lucide-react";
 import Link from "next/link";
 import { PropsWithChildren } from "react";
 import SearchBox from "./search-box";
 import FavoriteLink from "./FavoriteLink";
-import { currentUser } from "@clerk/nextjs/server";
 import Profile from "./profile";
-const Header = async () => {
-  const user = await currentUser();
+import { useUser } from "@clerk/nextjs";
+const Header = () => {
+  const { isSignedIn } = useUser();
 
   return (
     <header className="flex top-0 w-full sticky text-slate-700 px-6 sm:px-10 md:px-[74px] h-20 bg-white z-50 items-center justify-between">
@@ -31,7 +32,7 @@ const Header = async () => {
           <NavItemLabel>Cuisines</NavItemLabel>
         </Link>
 
-        {!user ? (
+        {!isSignedIn ? (
           <Link href="/sign-in" className="flex group items-center gap-2">
             <UserRound
               size={20}
@@ -41,8 +42,8 @@ const Header = async () => {
             <NavItemLabel>Sign In</NavItemLabel>
           </Link>
         ) : null}
-        {user ? <FavoriteLink /> : null}
-        {user ? <Profile /> : null}
+        {isSignedIn ? <FavoriteLink /> : null}
+        {isSignedIn ? <Profile /> : null}
       </nav>
     </header>
   );
