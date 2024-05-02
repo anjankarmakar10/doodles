@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { SignOutButton, useUser } from "@clerk/nextjs";
+import Link from "next/link";
 
 const Profile = () => {
   const { user } = useUser();
@@ -39,7 +40,9 @@ const Profile = () => {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/dashboard/account">Account</Link>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <SignOutButton>
