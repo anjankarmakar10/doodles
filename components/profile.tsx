@@ -19,6 +19,8 @@ import Link from "next/link";
 const Profile = () => {
   const { user } = useUser();
 
+  console.log(user);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
