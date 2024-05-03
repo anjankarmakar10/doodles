@@ -1,9 +1,11 @@
 import { badgeVariants } from "@/components/ui/badge";
 import { API_KEY, BASE_URL } from "@/lib/constants";
 import { RecipeDetails } from "@/lib/types";
+import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { cache } from "react";
+import FavoriteStatus from "../_components/FavoriteStatus";
 
 const getRecipeInformation = cache(
   async (id: string): Promise<RecipeDetails> => {
@@ -26,7 +28,10 @@ const RecipeInformation = async ({ params }: Params) => {
     <section className="max-w-[1036px] mx-auto px-4 py-8">
       <div className="">
         <div className="mb-4">
-          <h1 className="text-2xl font-bold mb-4 ">{recipe.title}</h1>
+          <header className="flex gap-4 items-center justify-between flex-wrap">
+            <h1 className="text-2xl font-bold mb-4 ">{recipe.title}</h1>
+            <FavoriteStatus />
+          </header>
           <div className="flex gap-2 items-center">
             {recipe.cuisines.map((item, i) => (
               <Link
