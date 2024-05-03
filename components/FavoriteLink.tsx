@@ -3,7 +3,7 @@ import { NavItemLabel } from "./header";
 
 const FavoriteLink = () => {
   return (
-    <Link href="/" className="flex group items-center gap-2">
+    <Link href="/dashboard/favorite" className="flex group items-center gap-2">
       <span className="relative block isolate">
         <svg
           className="group-focus:text-orange group-hover:text-orange fill-green group-focus:fill-orange group-hover:fill-orange transition-all"
