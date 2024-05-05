@@ -5,19 +5,21 @@ import UnSaveSaveRecipe from "./UnSaveSaveRecipe";
 interface Props {
   recipeId: number;
   userId: string;
+  image: string;
+  title: string;
 }
 
-const FavoriteStatus = async ({ recipeId, userId }: Props) => {
+const FavoriteStatus = async (saveRecipe: Props) => {
   const recipe = await prisma.favoriteRecipe.findFirst({
     where: {
-      recipeId,
-      userId,
+      recipeId: saveRecipe.recipeId,
+      userId: saveRecipe.userId,
     },
   });
 
   return (
     <div className="ml-auto">
-      {recipe ? <UnSaveSaveRecipe /> : <SaveRecipe />}
+      {recipe ? <UnSaveSaveRecipe /> : <SaveRecipe {...saveRecipe} />}
     </div>
   );
 };

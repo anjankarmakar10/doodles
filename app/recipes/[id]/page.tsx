@@ -3,7 +3,7 @@ import { API_KEY, BASE_URL } from "@/lib/constants";
 import { RecipeDetails } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
-import { cache } from "react";
+import { cache, use } from "react";
 import FavoriteStatus from "../_components/FavoriteStatus";
 import { currentUser } from "@clerk/nextjs/server";
 
@@ -25,15 +25,22 @@ const RecipeInformation = async ({ params }: Params) => {
   const recipe = await getRecipeInformation(params.id);
   const user = await currentUser();
 
+  if (!user) return null;
+
+  const saveRecipe = {
+    recipeId: recipe.id,
+    userId: user.id,
+    image: recipe.image,
+    title: recipe.title,
+  };
+
   return (
     <section className="max-w-[1036px] mx-auto px-4 py-8">
       <div className="">
         <div className="mb-4">
           <header className="flex gap-2 items-center justify-between flex-wrap">
             <h1 className="text-2xl font-bold mb-4 ">{recipe.title}</h1>
-            {user ? (
-              <FavoriteStatus userId={user.id} recipeId={recipe.id} />
-            ) : null}
+            {user ? <FavoriteStatus {...saveRecipe} /> : null}
           </header>
           <div className="flex gap-2 items-center">
             {recipe.cuisines.map((item, i) => (
