@@ -3,8 +3,8 @@ import { Heart } from "lucide-react";
 
 const SaveRecipe = () => {
   return (
-    <Button variant="outline" size="icon">
-      <Heart className="fill-pink-500 text-pink-500" />
+    <Button title="Save this recipe" variant="outline" size="icon">
+      <Heart />
     </Button>
   );
 };
