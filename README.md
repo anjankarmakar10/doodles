@@ -6,6 +6,7 @@ Welcome to our Recipe Discovery App! This application is designed to help you di
 
 - **Recipe Search**: Easily search for recipes using keywords, ingredients, or dietary preferences.
 - **Recipe Details**: View detailed information about each recipe, including ingredients, instructions, preparation time, and nutritional facts.
+- **Ingredient Details**: View detailed information about an ingredient and its nutritions.
 - **Save and Favorite**: Save your favorite recipes for quick access later.
 - **Responsive Design**: Enjoy a seamless experience across devices, from desktop to mobile.
 
