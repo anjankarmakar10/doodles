@@ -10,8 +10,9 @@ import {
 import { FavoriteRecipe } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
+import FavoriteRecipeRemoveButton from "./FavoriteRecipeRemoveButton";
 
-const FavoriteRecipeCard = ({ title, recipeId, image }: FavoriteRecipe) => {
+const FavoriteRecipeCard = ({ title, recipeId, image, id }: FavoriteRecipe) => {
   return (
     <Card className="w-full rounded-md">
       <CardContent className="p-0 px-2 pt-2 pb-3 flex flex-col gap-2">
@@ -31,9 +32,7 @@ const FavoriteRecipeCard = ({ title, recipeId, image }: FavoriteRecipe) => {
         >
           View
         </Link>
-        <Button size="sm" variant="destructive">
-          Remove
-        </Button>
+        <FavoriteRecipeRemoveButton id={id} />
       </CardFooter>
     </Card>
   );
