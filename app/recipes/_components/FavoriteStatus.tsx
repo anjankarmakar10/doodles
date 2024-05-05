@@ -19,7 +19,11 @@ const FavoriteStatus = async (saveRecipe: Props) => {
 
   return (
     <div className="ml-auto">
-      {recipe ? <UnSaveSaveRecipe /> : <SaveRecipe {...saveRecipe} />}
+      {recipe ? (
+        <UnSaveSaveRecipe recipeId={recipe.id} />
+      ) : (
+        <SaveRecipe {...saveRecipe} />
+      )}
     </div>
   );
 };
