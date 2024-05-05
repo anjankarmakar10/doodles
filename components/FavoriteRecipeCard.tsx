@@ -23,7 +23,7 @@ const FavoriteRecipeCard = ({ title, recipeId, image, id }: FavoriteRecipe) => {
           height={320}
           className="w-full rounded-md h-auto object-cover"
         />
-        <CardTitle className="line-clamp-2">{title}</CardTitle>
+        <CardTitle className="line-clamp-2 pb-[2px]">{title}</CardTitle>
       </CardContent>
       <CardFooter className="grid p-0 px-2 pb-2 grid-cols-2 gap-2">
         <Link

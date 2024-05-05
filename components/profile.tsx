@@ -43,6 +43,9 @@ const Profile = () => {
           <DropdownMenuItem asChild>
             <Link href="/dashboard/account">Account</Link>
           </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/dashboard/favorite">Favorite</Link>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <SignOutButton>
