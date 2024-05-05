@@ -21,7 +21,26 @@ const FavoritePage = async () => {
     <div>
       <section className="grid items-center gap-8 pb-8 pt-6 md:py-8 overflow-hidden">
         <PageHeader>
-          <PageHeaderHeading size="sm">Favorite</PageHeaderHeading>
+          <PageHeaderHeading className="flex items-center gap-2" size="sm">
+            <div>
+              <div className="flex group text-lg items-center gap-2">
+                <span className="relative block isolate">
+                  <svg
+                    className="group-focus:text-orange group-hover:text-orange fill-green group-focus:fill-orange group-hover:fill-orange transition-all"
+                    viewBox="-1 0 37 32"
+                    height="40"
+                    width="40"
+                  >
+                    <path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path>
+                  </svg>
+                  <span className="absolute text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                    {recipes.length}
+                  </span>
+                </span>
+              </div>
+            </div>
+            Favorite
+          </PageHeaderHeading>
           <PageHeaderDescription size="sm">
             Manage your favorite recipes
           </PageHeaderDescription>

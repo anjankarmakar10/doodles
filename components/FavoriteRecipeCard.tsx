@@ -11,7 +11,7 @@ import { FavoriteRecipe } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 
-const FavoriteRecipeCard = ({ title, id, image }: FavoriteRecipe) => {
+const FavoriteRecipeCard = ({ title, recipeId, image }: FavoriteRecipe) => {
   return (
     <Card className="w-full rounded-md">
       <CardContent className="p-0 px-2 pt-2 pb-3 flex flex-col gap-2">
@@ -26,7 +26,7 @@ const FavoriteRecipeCard = ({ title, id, image }: FavoriteRecipe) => {
       </CardContent>
       <CardFooter className="grid p-0 px-2 pb-2 grid-cols-2 gap-2">
         <Link
-          href={"/"}
+          href={`/recipes/${recipeId}`}
           className={buttonVariants({ size: "sm", variant: "outline" })}
         >
           View

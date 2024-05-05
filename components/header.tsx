@@ -42,7 +42,7 @@ const Header = () => {
             <NavItemLabel>Sign In</NavItemLabel>
           </Link>
         ) : null}
-        {isSignedIn ? <FavoriteLink /> : null}
+
         {isSignedIn ? <Profile /> : null}
       </nav>
     </header>
